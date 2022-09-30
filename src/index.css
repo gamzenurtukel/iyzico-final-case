@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.ant-menu-horizontal > .ant-menu-item::after{
+  border-bottom: none !important;
+  transition: none !important;
+}

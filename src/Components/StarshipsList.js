@@ -6,6 +6,7 @@ import { getAllStarships } from "../Redux/slices/starshipsSlice"
 import { fetchAsyncStarships } from "../Redux/slices/starshipsSlice";
 import { Divider, List } from 'antd';
 import { Button, Skeleton } from 'antd';
+import {Link} from "react-router-dom";
 
 function StarshipsListPage() {
     const [page, setPage] = useState(1)
@@ -62,12 +63,12 @@ function StarshipsListPage() {
                 dataSource={list}
                 renderItem={(item) => (
                     <List.Item
-                        actions={[<a key="list-loadmore-more">detail</a>]}
+                        actions={[<Link to="/starshipdetail" state={item}>Detail</Link>]}
                     >
                         <Skeleton title={false} loading={item.loading} active>
                             <List.Item.Meta
                                 title={<div style={{ float: "left", marginLeft: "10px" }}>Name: {item.name}</div>}
-                                description={<div>Model: {item.model}</div>}
+                                description={<div>Model: {item.model} </div>}
                             />
                             <div>Rate: {item.hyperdrive_rating} <br /> <Rate allowHalf disabled defaultValue={item.hyperdrive_rating} />
                             </div>

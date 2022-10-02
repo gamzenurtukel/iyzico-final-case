@@ -17,7 +17,7 @@ Bu sayfada starships listesi model, name ve rate değerleri swapi api'sini kulla
 
 Load More butonuna tıklandığında ikici,üçüncü ve dördüncü sayfa starships listelemektedir.
 
-![starshipslist-2](./src/screenshots/starships_list1.png.?raw=true)
+![starshipslist-2](./src/screenshots/starships_list1.png?raw=true)
 
 Listelenen starships detail'a tıklandığında tıklanan starship'in detay sayfasına yönlendiriliyor.
 
@@ -43,4 +43,4 @@ Starships list sayfasında listelenen starship verilerinden detail'a tıklandı�
 
 Path name değeri yanlış girildiğinde not found sayfası gelmektedir.Sayfa lottie animasyonu ile tasarlanmıştır.
 
-![notfound-1](./src/screenshots/detail_page.png?raw=true)
+![notfound-1](./src/screenshots/not_found.png.png?raw=true)

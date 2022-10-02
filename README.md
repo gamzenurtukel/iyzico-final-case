@@ -43,4 +43,4 @@ Starships list sayfasında listelenen starship verilerinden detail'a tıklandı�
 
 Path name değeri yanlış girildiğinde not found sayfası gelmektedir.Sayfa lottie animasyonu ile tasarlanmıştır.
 
-![notfound-1](./src/screenshots/not_found.png.png?raw=true)
+![notfound-1](./src/screenshots/not_found.png?raw=true)

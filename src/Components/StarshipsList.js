@@ -47,7 +47,7 @@ function StarshipsListPage() {
         const search = searchStarshipsList.results || [];
         setList(search);
     }, [searchTerm?.value])
-    
+
     const onLoadMore = () => {
         setLoading(true);
         setPage((page) => page + 1)

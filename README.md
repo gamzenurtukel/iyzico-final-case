@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Iyzico Final Case
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proje ant design kullanılarak tasarlanmıştır.Sayfa yönlendirmeleri için react-router-dom kullanılmıştır.State management için redux ve rudux toolkit araçları kullanılmıştır.Swapi Api işlemleri axios ile yapılmıştır.
 
-## Available Scripts
+# Home Page
 
-In the project directory, you can run:
+Burada sayfa ilk açıldığında home sayfası görüntülenmektedir ve hoşgeldiniz yazısı ve lottie starwars animasyonu yer almaktadır.
+Sayfayı aşağı indirilmesine karşın menü üst kısma sabitlenmiştir.Menüde Starships List'e tıklandığında starships liste sayfasına gitmektedir.Sayfa tasarımında layout içinde header ve content olarak tasarlanmıştır.Sayfa değiştiğinde sadece content kısmı değilmektedir.
 
-### `npm start`
+![home-1](./src/screenshots/home_page.png?raw=true)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Starships List Page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Bu sayfada starships listesi model, name ve rate değerleri swapi api'sini kullanılarak listelenmiştir.Sayfa ilk açıldığında swapi api'sinden gelen birinci sayfa starships listelemektedir.
 
-### `npm test`
+![starshipslist-1](./src/screenshots/starships_list.png?raw=true)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Load More butonuna tıklandığında ikici,üçüncü ve dördüncü sayfa starships listelemektedir.
 
-### `npm run build`
+![starshipslist-2](./src/screenshots/starships_list1.png.?raw=true)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Listelenen starships detail'a tıklandığında tıklanan starship'in detay sayfasına yönlendiriliyor.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Starships Search Bar
+ 
+ Aramak istenilen starships search bar'a yazıldığında name ve model değerlerine göre starships listeleniyor.
+ Aşağıda search bar'a "corvette" değeri girilmiş ve bu değere sahip starships listelenmiştir.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ ![search-1](./src/screenshots/search_bar1.png?raw=true)
+ 
+ Search bar'a "star" değeri girilmiş ve bu değere sahip starships listelenmiştir.
 
-### `npm run eject`
+![search-2](./src/screenshots/search_bar.png?raw=true)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Starships List Details Page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Starships list sayfasında listelenen starship verilerinden detail'a tıklandığında ilgili starship verisinin name,model ve diğer değerleri bu sayfada kart şeklinde görüntülenerek tasarlanmıştır.Go to back butonu ile starships list sayfasına geri dönmektedir.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![detail-2](./src/screenshots/detail_page.png?raw=true)
 
-## Learn More
+# Not Found Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Path name değeri yanlış girildiğinde not found sayfası gelmektedir.Sayfa lottie animasyonu ile tasarlanmıştır.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![notfound-1](./src/screenshots/detail_page.png?raw=true)

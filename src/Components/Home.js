@@ -12,7 +12,7 @@ function Home() {
             <br />
             <Lottie
                 height={500}
-                width={400}
+                width={500}
                 options={{
                     animationData: lf30_editor_j15qrcmh,
                     loop: true,

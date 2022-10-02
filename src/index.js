@@ -6,10 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.min.css';
 import { BrowserRouter, Link } from 'react-router-dom';
 import { Menu, Layout } from "antd";
-import { HomeOutlined, UnorderedListOutlined, SearchOutlined } from '@ant-design/icons';
-import { Input, Space } from 'antd';
+import { HomeOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
+import SearchBar from './Components/SearchBar';
 
 const { Header, Content } = Layout;
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,15 +20,13 @@ root.render(
         <Header style={{ position: 'fixed', zIndex: 1, width: '100%', padding: "0" }}>
           <Menu mode="horizontal" defaultSelectedKeys={['home']} >
             <Menu.Item key="home" icon={<HomeOutlined />}>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </Menu.Item>
             <Menu.Item key="list" icon={<UnorderedListOutlined />}>
               <Link to="/starshipslist">Starships List</Link>
             </Menu.Item>
             <Menu.Item key="search">
-              <Space>
-                <Input placeholder="Search" prefix={<SearchOutlined />} />
-              </Space>
+              <SearchBar/>
             </Menu.Item>
           </Menu>
         </Header>

@@ -15,3 +15,6 @@ code {
   border-bottom: none !important;
   transition: none !important;
 }
+.ant-layout-header .ant-menu {
+  align-items: center;
+}

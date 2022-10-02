@@ -4,17 +4,23 @@ import { Rate } from 'antd';
 import { useSelector, useDispatch } from "react-redux";
 import { getAllStarships } from "../Redux/slices/starshipsSlice"
 import { fetchAsyncStarships } from "../Redux/slices/starshipsSlice";
+import { getSearchStarships } from "../Redux/slices/starshipsSlice";
+import { fetchAsyncStarshipsSearch } from "../Redux/slices/starshipsSlice";
 import { Divider, List } from 'antd';
 import { Button, Skeleton } from 'antd';
-import {Link} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function StarshipsListPage() {
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(1);
+    const [term, setTerm] = useState("");
     const [initLoading, setInitLoading] = useState(true);
     const [loading, setLoading] = useState(false);
-    const [data, setData] = useState([]);
     const [list, setList] = useState([]);
     const starshipsList = useSelector(getAllStarships);
+    const searchStarshipsList = useSelector(getSearchStarships);
+
+    const location = useLocation();
+    const searchTerm = location.state
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -25,13 +31,23 @@ function StarshipsListPage() {
 
     useEffect(() => {
         if (!initLoading) {
-            console.log("reduxx", starshipsList);
-            const results = starshipsList.results || []
-            setData(results);
-            setList(results);
+            setTerm(searchTerm?.value || "");
+            if (term === "") {
+                const results = starshipsList.results || []
+                setList(results);
+            }
+            else {
+                dispatch(fetchAsyncStarshipsSearch(searchTerm?.value || ''));
+            }
         }
-    }, [initLoading, starshipsList])
+    }, [initLoading, term, searchTerm?.value]);
+    console.log('searchStarshipsList', searchStarshipsList)
 
+    useEffect(() => {
+        const search = searchStarshipsList.results || [];
+        setList(search);
+    }, [searchTerm?.value])
+    
     const onLoadMore = () => {
         setLoading(true);
         setPage((page) => page + 1)
@@ -60,7 +76,7 @@ function StarshipsListPage() {
                 loading={initLoading}
                 itemLayout="horizontal"
                 loadMore={loadMore}
-                dataSource={list}
+                dataSource={searchStarshipsList?.results?.length ? searchStarshipsList.results : starshipsList?.results}
                 renderItem={(item) => (
                     <List.Item
                         actions={[<Link to="/starshipdetail" state={item}>Detail</Link>]}

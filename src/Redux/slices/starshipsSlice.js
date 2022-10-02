@@ -12,14 +12,6 @@ export const fetchAsyncStarships = createAsyncThunk(
     }
 );
 
-export const fetchAsyncStarshipsShowDetail = createAsyncThunk(
-    "starships/fetchAsyncStarshipsShowDetail",
-    async (id) => {
-        const response = await starshipsApi.get(`/${id}`);
-        return response.data;
-    }
-);
-
 export const fetchAsyncStarshipsSearch = createAsyncThunk(
     "starships/fetchAsyncStarshipsSearch",
     async (term) => {
@@ -54,19 +46,13 @@ const starshipsSlice = createSlice({
         },
         [fetchAsyncStarships.rejected]: () => {
             console.log("Rejected!");
-        },
-        [fetchAsyncStarshipsShowDetail.fulfilled]: (state, { payload }) => {
-            console.log("Fetched Successfully!");
-            return { ...state, shows: payload };
-        },
+        },       
         [fetchAsyncStarshipsSearch.fulfilled]: (state, { payload }) => {
             console.log("Fetched Successfully!");
-            return { ...state, searchStarships: payload };
+            state.searchStarships = payload;
         },
     },
 });
-
 export const getAllStarships = (state) => state.starships.starships;
-export const getShowsStarship = (state) => state.starships.shows;
 export const getSearchStarships = (state) => state.starships.searchStarships;
 export default starshipsSlice.reducer;
